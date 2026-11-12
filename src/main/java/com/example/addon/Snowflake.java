@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 
 public class Snowflake extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
+    public static final HudGroup HUD_GROUP = new HudGroup("Snowflake");
 
     public static final Category COMBAT = new Category("Combat");
     public static final Category PLAYER = new Category("Player");
