@@ -46,7 +46,7 @@ public class ModuleExample extends Module {
         super(Snowflake.WORLD, "world-origin", "An example module that highlights the center of the world.");
     /**
      * Example event handling method.
-     * Requires {@link AddonTemplate#getPackage()} to be setup correctly, otherwise the game will crash whenever the module is enabled.
+     * Requires {@link Snowflake#getPackage()} to be setup correctly, otherwise the game will crash whenever the module is enabled.
      */
     @EventHandler
     private void onRender3d(Render3DEvent event) {
