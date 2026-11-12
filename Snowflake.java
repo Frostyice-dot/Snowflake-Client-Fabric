@@ -1,49 +1,39 @@
-package com.example.addon;
 
-import com.example.addon.commands.CommandExample;
-import com.example.addon.hud.HudExample;
-import com.example.addon.modules.ModuleExample;
+package com.snowflake;
+
 import com.mojang.logging.LogUtils;
-import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
-import meteordevelopment.meteorclient.commands.Commands;
-import meteordevelopment.meteorclient.systems.hud.Hud;
-import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.slf4j.Logger;
 
-public class AddonTemplate extends MeteorAddon {
+public class Snowflake extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
-    public static final Category CATEGORY = new Category("Example");
-    public static final HudGroup HUD_GROUP = new HudGroup("Example");
+
+    public static final Category COMBAT = new Category("Combat");
+    public static final Category PLAYER = new Category("Player");
+    public static final Category MOVEMENT = new Category("Movement");
+    public static final Category VISUALS = new Category("Visuals");
+    public static final Category WORLD = new Category("World");
+    public static final Category MISC = new Category("Misc");
 
     @Override
     public void onInitialize() {
-        LOG.info("Initializing Meteor Addon Template");
-
-        // Modules
-        Modules.get().add(new ModuleExample());
-
-        // Commands
-        Commands.add(new CommandExample());
-
-        // HUD
-        Hud.get().register(HudExample.INFO);
+        LOG.info("Initializing Snowflake Client");
     }
 
     @Override
     public void onRegisterCategories() {
-        Modules.registerCategory(CATEGORY);
+        Modules.registerCategory(COMBAT);
+        Modules.registerCategory(PLAYER);
+        Modules.registerCategory(MOVEMENT);
+        Modules.registerCategory(VISUALS);
+        Modules.registerCategory(WORLD);
+        Modules.registerCategory(MISC);
     }
 
     @Override
     public String getPackage() {
-        return "com.example.addon";
-    }
-
-    @Override
-    public GithubRepo getRepo() {
-        return new GithubRepo("MeteorDevelopment", "meteor-addon-template");
+        return "com.snowflake";
     }
 }
