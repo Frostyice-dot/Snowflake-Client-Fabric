@@ -1,5 +1,5 @@
 
-package com.snowflake;
+package com.example.addon;
 
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
