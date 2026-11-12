@@ -5,6 +5,7 @@ import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import org.slf4j.Logger;
 
 public class Snowflake extends MeteorAddon {
