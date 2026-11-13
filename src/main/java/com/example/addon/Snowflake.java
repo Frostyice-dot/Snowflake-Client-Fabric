@@ -35,7 +35,6 @@ public class Snowflake extends MeteorAddon {
     }
 
     @Override
-    public String getPackage() {
-        return "com.snowflake";
-    }
+public String getPackage() {
+    return "com.example.addon";
 }
