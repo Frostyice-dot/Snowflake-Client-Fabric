@@ -1,11 +1,16 @@
 
 package com.example.addon;
 
+import com.example.addon.commands.CommandExample;
+import com.example.addon.hud.HudExample;
+import com.example.addon.modules.ModuleExample;
 import com.mojang.logging.LogUtils;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
+import meteordevelopment.meteorclient.commands.Commands;
+import meteordevelopment.meteorclient.systems.hud.Hud;
+import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import org.slf4j.Logger;
 
 public class Snowflake extends MeteorAddon {
@@ -22,6 +27,10 @@ public class Snowflake extends MeteorAddon {
     @Override
     public void onInitialize() {
         LOG.info("Initializing Snowflake Client");
+
+        Modules.get().add(new ModuleExample());
+        Commands.add(new CommandExample());
+        Hud.get().register(HudExample.INFO);
     }
 
     @Override
@@ -35,6 +44,7 @@ public class Snowflake extends MeteorAddon {
     }
 
     @Override
-public String getPackage() {
-    return "com.example.addon";
+    public String getPackage() {
+        return "com.example.addon";
+    }
 }
